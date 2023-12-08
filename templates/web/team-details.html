@@ -1,0 +1,147 @@
+{% extends 'web/base.html' %}{% load static %}{% block title %}Team{% endblock %}
+
+{% block content %}
+
+    <!-- Progress scroll totop -->
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- Cursor -->
+    <div class="cursor js-cursor"></div>
+    <!-- Header Banner -->
+    <section class="banner-header section-padding bg-img" data-overlay-dark="4" data-background="{% static 'web/img/slider/10.jpg' %}">
+        <div class="v-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mt-60">
+                        <h6>{{team_members.member_position}}</h6>
+                        <h1>{{team_members.member_name}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- divider line -->
+    <div class="line-vr-section"></div>
+    <!-- Team Single -->
+    <section class="team-single section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="team-img mb-30">
+                        <div class="img">
+                            <img src="{{team_members.member_image.url}}" class="rounded-1" alt="">
+                        </div>
+                    </div>
+                    <div class="wrapper">
+                        <div class="cont">
+                            <div class="coll">
+                                <div class="social-icon">
+                                    <a href="{{ team_members.facebook_link }}" class="social-link"><i class="fa fa-facebook"></i></a>
+                                    <a href="{{ team_members.youtube_link }}" class="social-link"><i class="fa fa-youtube"></i></a>
+                                    <a href="{{ team_members.instagram_link }}" class="social-link"><i class="fa fa-instagram"></i></a>
+                                </div>
+                            </div>                            
+                            <div class="coll">
+                                <p>My e-mail address: <a href="mailto:{{team_members.member_email}}">{{team_members.member_email}}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="con">
+                        <h6>{{team_members.member_about}}</h6>
+                        <p>{{team_members.about_content}}</p>
+                        <!-- tab -->
+                        <ul class="nav nav-tabs simpl-bord mt-60" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <span class="nav-link active cursor-pointer" id="vision-tab" data-bs-toggle="tab" data-bs-target="#biography">Biography</span>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <span class="nav-link cursor-pointer" id="mission-tab" data-bs-toggle="tab" data-bs-target="#education">Education</span>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <span class="nav-link cursor-pointer" id="mission-tab" data-bs-toggle="tab" data-bs-target="#awards">Awards</span>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="biography" role="tabpanel" aria-labelledby="vision-tab">
+                                <p>Biography utate ons amet ravida haretra nuam the duru miss uctus the drana accumsan justo aliquam sit amet auctor orci done vitaerisus duise the nisan sapien in the miss rana duru silver sapien.</p>
+                            </div>
+                            <div class="tab-pane fade" id="education" role="tabpanel" aria-labelledby="mission-tab">
+                                <p>Education utate ons amet ravida haretra nuam the duru miss uctus the drana accumsan justo aliquam sit amet auctor orci done vitaerisus duise the nisan sapien in the miss rana duru silver sapien.</p>
+                            </div>
+                            <div class="tab-pane fade" id="awards" role="tabpanel" aria-labelledby="mission-tab">
+                                <p>Awards utate ons amet ravida haretra nuam the duru miss uctus the drana accumsan justo aliquam sit amet auctor orci done vitaerisus duise the nisan sapien in the miss rana duru silver sapien.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <!-- divider line -->
+    <div class="line-vr-section"></div>
+    <!-- Team -->
+    <section class="team section-padding bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center mb-30">
+                    <div class="section-title3">Certified Team</div>
+                    <div class="section-title">Other Team</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="team-img"><img src="{% static 'web/img/team/1.jpg' %}" alt="" class="w-100"></div>
+                            <div class="con">
+                                <h5 class="mb-0"><a href="team-single.html">Enrico Brown<br><span>General Manager</span></a></h5>
+                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="team-img"> <img src="{% static 'web/img/team/2.jpg' %}" alt="" class="w-100"> </div>
+                            <div class="con">
+                                <h5 class="mb-0"><a href="team-single.html">Olivia Smith<br><span>Engine Specialist</span></a></h5>
+                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="team-img"><img src="{% static 'web/img/team/4.jpg' %}" alt="" class="w-100"></div>
+                            <div class="con">
+                                <h5 class="mb-0"><a href="team-single.html"> Alberto Steve<br><span>Certified Mechanic</span></a></h5>
+                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="team-img"> <img src="{% static 'web/img/team/5.jpg' %}" alt="" class="w-100"> </div>
+                            <div class="con">
+                                <h5 class="mb-0"><a href="team-single.html">Wagner Brown<br><span>Certified Engine</span></a></h5>
+                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="team-img"> <img src="{% static 'web/img/team/6.jpg' %}" alt="" class="w-100"> </div>
+                            <div class="con">
+                                <h5 class="mb-0"><a href="team-single.html">Andrea Lion<br><span>Customer Support</span></a></h5>
+                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="team-img"> <img src="{% static 'web/img/team/3.jpg' %}" alt="" class="w-100"> </div>
+                            <div class="con">
+                                <h5 class="mb-0"><a href="team-single.html">Pedro Martin<br><span>Certified Technician</span></a></h5>
+                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

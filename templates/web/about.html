@@ -1,0 +1,194 @@
+{% extends 'web/base.html' %}{% load static %}{% block title %}About{% endblock %}
+
+{% block content %}
+
+    <!-- Progress scroll totop -->
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- Cursor -->
+    <div class="cursor js-cursor"></div>
+    <!-- Header Banner -->
+    <section class="banner-header section-padding bg-img" data-overlay-dark="5" data-background="{% static 'web/img/slider/1.jpg' %}">
+        <div class="v-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mt-60">
+                        <h6>Welcome to</h6>
+                        <h1>Care<span>x</span> Car Service & Repair</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- divider line -->
+    <div class="line-vr-section"></div>
+    <!-- About -->
+    <section class="about section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 valign animate-box" data-animate-effect="fadeInLeft">
+                    <div class="about-two-img full-width mb-30">
+                        <div class="img1 img-grayscale"> <img src="{% static 'web/img/about.jpg' %}" class="rounded-1" alt=""> </div>
+                        <div class="img2 img-grayscale"> <img src="{% static 'web/img/about2.jpg' %}" class="rounded-1" alt="">
+                            <div class="play-button">
+                                <a href="https://youtu.be/qOLM7jyxRBU" class="btn vid">
+                                    <svg width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <circle class="circle" cx="50" cy="50" r="48" stroke="white" stroke-width="2" fill="none" />
+                                    </svg> <i class="ti-control-play"></i> </a>
+                            </div>
+                        </div>
+                        <div class="award-icon animate-box" data-animate-effect="fadeInUp">
+                            <div class="star">
+                                <div class="img"> <img src="{% static 'web/img/about.jpg' %}" alt=""> <span class="icon carex-certificate"></span> </div>
+                            </div>
+                            <h6>100%</h6>
+                            <p>Quality Service</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-1 animate-box" data-animate-effect="fadeInRight">
+                    {% for about in abouts %}
+                    <div class="section-title2">About Us</div>
+                    <div class="section-title">{{about.about_title}}</div>
+                    <p class="mb-30">{{about.about_content}}</p>
+                    <ul class="list-unstyled list mb-30">
+                        <li>
+                            <div class="list-icon"> <span class="ti-check"></span> </div>
+                            <div class="list-text">
+                                <p>We offer multiple services</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- divider line -->
+    <div class="line-vr-section"></div>
+    <!-- Process -->
+    <section class="process section-padding bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center mb-30">
+                    <div class="section-title3 white">How We Work</div>
+                    <div class="section-title white">Our Process</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 animate-box" data-animate-effect="fadeInUp">
+                    <div class="item active"> <span class="icon carex-car-checklist"></span>
+                        <h5>Book appointment</h5>
+                        <p>Car lorem quisque sodales the varius vestibulum felis.</p>
+                        <div class="numb">01</div>
+                    </div>
+                </div>
+                <div class="col-md-3 animate-box" data-animate-effect="fadeInUp">
+                    <div class="item"> <span class="icon carex-car-2"></span>
+                        <h5>Bring your Vehicle</h5>
+                        <p>Car lorem quisque sodales the varius vestibulum felis.</p>
+                        <div class="numb">02</div>
+                    </div>
+                </div>
+                <div class="col-md-3 animate-box" data-animate-effect="fadeInUp">
+                    <div class="item"> <span class="icon carex-car-setting"></span>
+                        <h5>Get the Vehicle Repaired</h5>
+                        <p>Car lorem quisque sodales the varius vestibulum felis.</p>
+                        <div class="numb">03</div>
+                    </div>
+                </div>
+                <div class="col-md-3 animate-box" data-animate-effect="fadeInUp">
+                    <div class="item"> <span class="icon carex-certificate"></span>
+                        <h5>Ready for Deliver</h5>
+                        <p>Car lorem quisque sodales the varius vestibulum felis.</p>
+                        <div class="numb">04</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center mt-60"> <a href="#" class="button-2">Book Now <span class="ti-arrow-right"></span></a> </div>
+            </div>
+        </div>
+    </section>
+    <!-- Video -->
+    <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="5" data-background="{% static 'web/img/slider/2.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="section-title3 white">Explore</div>
+                    <div class="section-title white">Our Promo Video</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center col-md-12">
+                    <a class="vid" href="https://youtu.be/qOLM7jyxRBU">
+                        <div class="vid-butn"> <span class="icon"> <i class="ti-control-play"></i> </span> </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team -->
+    <section class="team section-padding bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center mb-30">
+                    <div class="section-title3">Certified Team</div>
+                    <div class="section-title">Our Experts Team</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="team-img"><img src="{% static 'web/img/team/1.jpg' %}" alt="" class="w-100"></div>
+                            <div class="con">
+                                <h5 class="mb-0"><a href="team-single.html">Enrico Brown<br><span>General Manager</span></a></h5>
+                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="team-img"> <img src="{% static 'web/img/team/2.jpg' %}" alt="" class="w-100"> </div>
+                            <div class="con">
+                                <h5 class="mb-0"><a href="team-single.html">Olivia Smith<br><span>Engine Specialist</span></a></h5>
+                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="team-img"> <img src="{% static 'web/img/team/3.jpg' %}" alt="" class="w-100"> </div>
+                            <div class="con">
+                                <h5 class="mb-0"><a href="team-single.html">Pedro Martin<br><span>Certified Technician</span></a></h5>
+                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="team-img"><img src="{% static 'web/img/team/4.jpg' %}" alt="" class="w-100"></div>
+                            <div class="con">
+                                <h5 class="mb-0"><a href="team-single.html"> Alberto Steve<br><span>Certified Mechanic</span></a></h5>
+                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="team-img"> <img src="{% static 'web/img/team/5.jpg' %}" alt="" class="w-100"> </div>
+                            <div class="con">
+                                <h5 class="mb-0"><a href="team-single.html">Wagner Brown<br><span>Certified Engine</span></a></h5>
+                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="team-img"> <img src="{% static 'web/img/team/6.jpg' %}" alt="" class="w-100"> </div>
+                            <div class="con">
+                                <h5 class="mb-0"><a href="team-single.html">Andrea Lion<br><span>Customer Support</span></a></h5>
+                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

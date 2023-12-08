@@ -1,0 +1,137 @@
+{% extends 'web/base.html' %}{% load static %}{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+    <!-- Progress scroll totop -->
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- Cursor -->
+    <div class="cursor js-cursor"></div>
+    <!-- Header Banner -->
+    <section class="banner-header section-padding bg-img" data-overlay-dark="5" data-background="{% static 'web/img/slider/7.jpg' %}">'
+        <div class="v-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h6>Blog & News</h6>
+                        <h1>Latest News</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- divider line -->
+    <div class="line-vr-section"></div>
+    <!-- Blog -->
+    <section class="blog2 section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        {% for blog in blogs %}
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <div class="post-img img-grayscale">
+                                        <a href=""><img src="{{ blog.image.url }}" alt=""></a>
+                                    </div>
+                                    <div class="post-cont">
+                                        <span class="category"><a href="{% url 'web:blog_detail' blog.slug %}">{{blog.sub_title}}</a></span>
+                                        <span class="calendar"><a href="{% url 'web:blog_detail' blog.slug %}">{{blog.date}}</a></span>
+                                        <h5><a href="{% url 'web:blog_detail' blog.slug %}">{{blog.title}}</a></h5>
+                                        <p>{{blog.content}}</p>
+                                        <a href="{% url 'web:blog_detail' blog.slug %}" class="button-1">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>                    
+                    <!-- Pagination -->
+                    <div class="row">
+                        <div class="col-md-12 mb-30">
+                            <ul class="pagination-wrap">
+                                <li><a href="blog2.html#"><i class="ti-angle-left"></i></a></li>
+                                <li><a href="blog2.html#">1</a></li>
+                                <li><a href="blog2.html#" class="active">2</a></li>
+                                <li><a href="blog2.html#">3</a></li>
+                                <li><a href="blog2.html#"><i class="ti-angle-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog2-sidebar row">
+                        <div class="col-md-12">
+                            <div class="widget search">
+                                <form>
+                                    <input type="text" name="search" placeholder="Type here ...">
+                                    <button type="submit"><i class="ti-search" aria-hidden="true"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="widget">
+                                <div class="widget-title">
+                                    <h6>Recent Posts</h6>
+                                </div>
+                                <ul class="recent">
+                                    <li>
+                                        <div class="thum img-grayscale"> <img src="{% static 'web/img/blog/7.jpg' %}" alt=""> </div> <a href="post.html">Tips for Winterizing Your Car</a>
+                                    </li>
+                                    <li>
+                                        <div class="thum img-grayscale"> <img src="{% static 'web/img/blog/8.jpg' %}" alt=""> </div> <a href="post.html">How to Change a Flat Tire</a>
+                                    </li>
+                                    <li>
+                                        <div class="thum img-grayscale"> <img src="{% static 'web/img/blog/9.jpg' %}" alt=""> </div> <a href="post.html">How to Change a Car Battery</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="widget">
+                                <div class="widget-title">
+                                    <h6>Archives</h6>
+                                </div>
+                                <ul>
+                                    <li><a href="#">December 2023</a></li>
+                                    <li><a href="#">November 2023</a></li>
+                                    <li class="mb-15"><a href="#">October 2023</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="widget">
+                                <div class="widget-title">
+                                    <h6>Categories</h6>
+                                </div>
+                                <ul>
+                                    <li><a href="#"><i class="ti-angle-right"></i>Car Repair</a></li>
+                                    <li><a href="#"><i class="ti-angle-right"></i>Autobody</a></li>
+                                    <li><a href="#"><i class="ti-angle-right"></i>Maintenance</a></li>
+                                    <li class="mb-15"><a href="#"><i class="ti-angle-right"></i>Engine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="widget">
+                                <div class="widget-title">
+                                    <h6>Tags</h6>
+                                </div>
+                                <ul class="tags">
+                                    <li><a href="#">Car</a></li>
+                                    <li><a href="#">Repair</a></li>
+                                    <li><a href="#">Maintenance</a></li>
+                                    <li><a href="#">Engine</a></li>
+                                    <li><a href="#">Mechanic</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

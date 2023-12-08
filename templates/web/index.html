@@ -1,0 +1,295 @@
+{% extends 'web/base.html' %}{% load static %}{% block title %}Home{% endblock %}
+
+{% block content %}
+
+   
+    <!-- Progress scroll totop -->
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- Cursor -->
+    <div class="cursor js-cursor"></div>
+ 
+    <!-- Header Video -->
+    <header class="header">
+        <div class="video-fullscreen-wrap">
+            <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
+            <div class="video-fullscreen-video" data-overlay-dark="7">
+                <video playsinline="" autoplay="" loop="" muted="">
+                    <source src="{% static 'web/video/video.mp4' %}" type="video/mp4" autoplay="" loop="" muted="">
+                    <source src="{% static 'web/video/video.webm' %}" type="video/webm" autoplay="" loop="" muted="">
+                </video>
+            </div>
+            <div class="v-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h6>Welcome to Carex</h6>
+                            <h1>Professional Car<br>Mechanics <span>&</span> Maintenance</h1>
+                            <a href="#0" class="button-1 mt-15">Book Now <span class="ti-arrow-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Contact Box -->
+    <div class="contact-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
+                    <div class="item"> <span class="icon carex-email"></span>
+                        <h5>Email us</h5>
+                        <p>appointment@carex.com</p>
+                        <span class="numb carex-email"></span>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
+                    <div class="item"> <span class="icon carex-location-map"></span>
+                        <h5>Our address</h5>
+                        <p>2424 King St. SC 29401 USA</p>
+                        <span class="numb carex-location-map"></span>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
+                    <div class="item active"> <span class="icon carex-phone-call"></span>
+                        <h5>Call us</h5>
+                        <p>855 100 4444</p>
+                        <span class="numb carex-phone-call"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- divider line -->
+    <div class="line-vr-section"></div>
+    <!-- About -->
+    <section class="about section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 valign animate-box" data-animate-effect="fadeInLeft">
+                    <div class="about-two-img full-width mb-30">
+                        <div class="img1 img-grayscale"> <img src="{% static 'web/img/about.jpg' %}" class="rounded-1" alt=""> </div>
+                        <div class="img2 img-grayscale"> <img src="{% static 'web/img/about2.jpg' %}" class="rounded-1" alt="">
+                            <div class="play-button">
+                                <a href="https://youtu.be/qOLM7jyxRBU" class="btn vid">
+                                    <svg width="100px" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <circle class="circle" cx="50" cy="50" r="48" stroke="white" stroke-width="2" fill="none" />
+                                    </svg> <i class="ti-control-play"></i> </a>
+                            </div>
+                        </div>
+                        <div class="award-icon animate-box" data-animate-effect="fadeInUp">
+                            <div class="star">
+                                <div class="img"> <img src="{% static 'web/img/star.png' %}" alt=""> <span class="icon carex-certificate"></span> </div>
+                            </div>
+                            <h6>100%</h6>
+                            <p>Quality Service</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-1 animate-box" data-animate-effect="fadeInRight">
+                    {% for about in abouts %}
+                    <div class="section-title2">About Us</div>
+                    <div class="section-title">{{about.about_title}}</div>
+                    <p class="mb-30">{{about.about_content}}</p>
+                    <ul class="list-unstyled list mb-30">
+                        <li>
+                            <div class="list-icon"> <span class="ti-check"></span> </div>
+                            <div class="list-text">
+                                <p></p>
+                            </div>
+                        </li>
+                    </ul> <a href="{% url 'web:about' %}" class="button-3">Read More <span class="ti-arrow-right"></span></a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- divider line -->
+    <div class="line-vr-section"></div>
+    <!-- Services -->
+    <section class="services1 section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center mb-30">
+                    <div class="section-title3">What We Do</div>
+                    <div class="section-title">Our <span>Services</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="full-width">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme">
+                        {% for service in services %}
+                        <div class="item">
+                            <a href="{% url 'web:service_detail' service.slug %}">
+                                <div class="wrap">
+                                    {% if service.service_image %}
+                                        <div class="wrapper-img"><img src="{{ service.service_image.url }}" class="img-fluid rounded-1"></div>
+                                    {% else %}
+                                    {% endif %}
+                                    <div class="wrapper-title">
+                                        <h4>{{ service.service_name }}</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- divider line -->
+    <div class="line-vr-section"></div>
+    <!-- Process -->
+    <section class="process section-padding bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center mb-30">
+                    <div class="section-title3 white">How We Work</div>
+                    <div class="section-title white">Our Process</div>
+                </div>
+            </div>
+            <div class="row">
+                {% for work in works %}
+                    <div class="col-md-3 animate-box {% if forloop.first %}active{% endif %}" data-animate-effect="fadeInUp">
+                        <div class="item"> <span class="icon carex-car-checklist"></span>
+                            <h5>{{ work.title }}</h5>
+                            <p>{{ work.work_content }}</p>
+                            <div class="numb">{{ work.order_num }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="row justify-content-center">
+                    <div class="col-md-12 text-center mt-60">
+                        <a href="{% url 'web:pricing' %}" class="button-2">Book Now <span class="ti-arrow-right"></span></a>
+                    </div>
+                </div>
+            </div>            
+    </section>
+    <!-- divider line -->
+    <div class="line-vr-section"></div>
+    <!-- Testiominals -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center mb-30">
+                    <div class="section-title3">Testimonials</div>
+                    <div class="section-title">What <span>Customers</span> Say</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="testimonials left">
+                        <figure class="img-grayscale">
+                            <img src="{% static 'web/img/testiominals.jpg' %}" alt="" class="img-fluid rounded-1">
+                        </figure>
+                        <div class="caption testimonials">
+                            <div class="owl-carousel owl-theme">
+                                {% for testimonial in testimonials %}
+                                <div class="item-box">
+                                    <span class="quote"><i class="fa fa-quote-left"></i></span>
+                                    <h5>{{testimonial.testimonial_name}}</h5>
+                                    <p>{{testimonial.testimonial_content}}</p>
+                                    <div class="info">
+                                        <div class="author-img">
+                                            <img src="{{testimonial.testimonial_image.url}}" alt="">
+                                        </div>
+                                        <div class="cont">
+                                            <h6>{{testimonial.position}}</h6>
+                                            <span>Customer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+    </section>
+    <!-- Video -->
+    <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="5" data-background="{% static 'web/img/slider/2.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="section-title3 white">Explore</div>
+                    <div class="section-title white">Our Promo Video</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center col-md-12">
+                    <a class="vid" href="https://youtu.be/qOLM7jyxRBU">
+                        <div class="vid-butn"> <span class="icon"> <i class="ti-control-play"></i> </span> </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team -->
+    <section class="team section-padding bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center mb-30">
+                    <div class="section-title3">Certified Team</div>
+                    <div class="section-title">Our Experts Team</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme">
+                        {% for team_member in team_members %}
+                        <div class="item">
+                            <div class="team-img"><img src="{{team_member.member_image.url}}" alt="" class="w-100"></div>
+                            <div class="con">
+                                <h5 class="mb-0"><a href="{% url 'web:team_detail' team_member.slug %}">{{team_member.member_name}}<br><span>{{team_member.member_position}}</span></a></h5>
+                                <div class="arrow"><a href="{% url 'web:team_detail' team_member.slug %}"><span class="ti-arrow-top-right"></span></a> </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <!-- divider line -->
+    <div class="line-vr-section"></div>
+    <!-- Blog -->
+    <section class="blog1 section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center mb-30">
+                    <div class="section-title3">Our Blog</div>
+                    <div class="section-title">Latest <span>News</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="full-width">
+            <div class="row">
+                <div class="col-md-12">
+                <div class="owl-carousel owl-theme">
+                   {% for blog in blogs %}
+                    <div class="item">
+                        <div class="wrap">
+                            <div class="wrapper-img"> <img src="{{blog.image.url}}" class="img-fluid rounded-1"> </div>
+                            <div class="wrapper-title">
+                                <h6>{{blog.sub_title}}</h6>
+                                <h4>{{blog.title}}</h4> 
+                                <a class="icon ti-arrow-right" href="{% url 'web:blog_detail' blog.slug %}"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Appointment -->
+
+{% endblock %}

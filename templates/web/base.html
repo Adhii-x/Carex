@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>{% block title %}CAREX{% endblock %}</title>
+    <link rel="shortcut icon" href="{% static 'web/img/favicon.png' %}" />
+    <link rel="stylesheet" href="../../../../fonts.googleapis.com/css2b05f.css?family=Barlow:wght@400;500;600;700;800;900&amp;family=Syne:wght@400;500;600;700;800&amp;display=swap">
+    <link rel="stylesheet" href="{% static 'web/css/plugins.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/style.css' %}" />
+</head>
+<body>
+
+    {% include 'web/partials/header.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+
+
+    {% include 'web/partials/footer.html' %}
+
+
+
+    <!-- jQuery -->
+    <script src="{% static 'web/js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'web/js/jquery-migrate-3.4.1.min.js' %}"></script>
+    <script src="{% static 'web/js/modernizr-2.6.2.min.js' %}"></script>
+    <script src="{% static 'web/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'web/js/jquery.isotope.v3.0.2.js' %}"></script>
+    <script src="{% static 'web/js/popper.min.js' %}"></script>
+    <script src="{% static 'web/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'web/js/scrollIt.min.js' %}"></script>
+    <script src="{% static 'web/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'web/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'web/js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'web/js/jquery.magnific-popup.js' %}"></script>
+    <script src="{% static 'web/js/select2.js' %}"></script>
+    <script src="{% static 'web/js/datepicker.js' %}"></script>
+    <script src="{% static 'web/js/YouTubePopUp.js' %}"></script>
+    <script src="{% static 'web/js/before-after.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.15.3/dist/sweetalert2.all.min.js"></script>
+    <script src="{% static 'web/js/ajax.js' %}"></script>
+    <script src="{% static 'web/js/custom.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+{% extends 'web/base.html' %}{% load static %}{% block title %}Pricing{% endblock %}
+
+{% block content %}
+
+    <!-- Progress scroll totop -->
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- Cursor -->
+    <div class="cursor js-cursor"></div>
+    <!-- Header Banner -->
+    <section class="banner-header section-padding bg-img" data-overlay-dark="5" data-background="img/slider/9.jpg">
+        <div class="v-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 mt-60 text-center">
+                        <h6>Pricing Plan</h6>
+                        <h1>Best Packages</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- divider line -->
+    <div class="line-vr-section"></div>
+    <!--  Pricing -->
+    <section class="pricing section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
+                    <div class="item">
+                        <div class="cont">
+                            <h5>Silver Package</h5>
+                            <h1 class="price-price">350 <span>USD</span></h1>
+                            <div class="price-features">
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span> Conventional Oil Change</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Fuel System Cleaning</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Coolant Exchange</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Transmission Fluid Service</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Battery Check & Tire Rotation</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Visual Brake Inspection</p>
+                            </div> <a href="{% url 'web:contact' %}" class="button-2">Contact Us</a>
+                            <div class="numb">Silver</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
+                    <div class="item">
+                        <div class="cont">
+                            <h5>Platinum Package</h5>
+                            <h1 class="price-price">450 <span>USD</span></h1>
+                            <div class="price-features">
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span> Conventional Oil Change</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Fuel System Cleaning</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Coolant Exchange</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Transmission Fluid Service</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Battery Check & Tire Rotation</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Visual Brake Inspection</p>
+                            </div> <a href="{% url 'web:contact' %}" class="button-2">Contact Us</a>
+                            <div class="numb">Platinum</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
+                    <div class="item">
+                        <div class="cont">
+                            <h5>Gold Package</h5>
+                            <h1 class="price-price">650 <span>USD</span></h1>
+                            <div class="price-features">
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Performance Snapshot</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Conventional Oil Change</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Fuel System Cleaning</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Coolant Exchange</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Transmission Fluid Service</p>
+                                <p><span class="icon"><i class="ti-check" aria-hidden="true"></i></span>Battery Check & Tire Rotation</p>
+                            </div> <a href="{% url 'web:contact' %}" class="button-2">Contact Us</a>
+                            <div class="numb">Gold</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- divider line -->
+    <div class="line-vr-section"></div>
+    <!-- Pricing Table -->
+    <section class="section-padding animate-box" data-animate-effect="fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center mb-30">
+                    <div class="section-title3">Maintenance & Repair</div>
+                    <div class="section-title"><span>Pricing</span> Table</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pricing-table-wrapper">
+                        <table class="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>Your Car Service</th>
+                                    <th>Time</th>
+                                    <th>Cost Range</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Oil and oil filter replacement</td>
+                                    <td>1 hour</td>
+                                    <td>$60.00 - $80.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Brake fluid check and change</td>
+                                    <td>1 hour</td>
+                                    <td>$50.00 - $75.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Anti-freeze coolant</td>
+                                    <td>1 hour</td>
+                                    <td>$40.00 - $50.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Windscreen wash</td>
+                                    <td>1 hour</td>
+                                    <td>$20.00 - $40.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Battery condition </td>
+                                    <td>1 hour</td>
+                                    <td>$40.00 - $60.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Suspension-repairs check</td>
+                                    <td>1 hour</td>
+                                    <td>$80.00 - $90.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Wheel bearing check</td>
+                                    <td>1 hour</td>
+                                    <td>$80.00 - $120.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Air filter or cabin filter change</td>
+                                    <td>1 hour</td>
+                                    <td>$30.00 - $90.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Wheel balance</td>
+                                    <td>3 hour</td>
+                                    <td>$90.00 - $99.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Brake System Flush</td>
+                                    <td>2 hour</td>
+                                    <td>$20.00 - $50.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Appointment -->
+
+{% endblock %}
