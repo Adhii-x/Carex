@@ -92,9 +92,9 @@ def blog_detail(request, slug):
 
 def contact(request):
     if request.method == "POST":
-        form = contact(request.POST)
+        form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
+            # Process the valid form data (e.g., save to the database)
             response_data = {
                 "status": "true",
                 "title": "Successfully Submitted",
@@ -110,5 +110,6 @@ def contact(request):
             json.dumps(response_data), content_type="application/json"
         )
     else:
-        context = {"contact": form}
+        form = ContactForm()
+    context = {"contact": form}
     return render(request, "web/contact.html", context)
