@@ -106,9 +106,9 @@
                 <div class="col-md-6">
                     <div class="form-box">
                         <h5 class="white">Get in <span>touch</span></h5>
-                        <form action=""  method="POST">
+                        <form action="" class="ajax reload" method="POST">
                             {% csrf_token %}
-
+                        
                             <!-- form message -->
                             <div class="row">
                                 <div class="col-12">
@@ -118,25 +118,25 @@
                             <!-- form elements -->
                             <div class="row">
                                 <div class="col-md-12 form-group">
-                                    {{form.name}}
+                                    {{ form.name }}
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    {{form.email}}
+                                    {{ form.email }}
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    {{form.phone}}
+                                    {{ form.phone }}
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    {{form.subject}}
+                                    {{ form.subject }}
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    {{form.message}}
+                                    {{ form.message }}
                                 </div>
                                 <div class="col-md-12">
                                     <input name="submit" type="submit" value="Send Message">
                                 </div>
                             </div>
-                        </form>
+                        </form>                        
                     </div>
                 </div>
             </div>

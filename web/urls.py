@@ -13,5 +13,6 @@ urlpatterns = [
     path('blog/<slug:slug>/', views.blog_detail, name='blog_detail'),
     path("contact/", views.contact, name="contact"),
     path('pricing/',views.pricing,name='pricing'),
-    path('team/<slug:slug>/', views.team_detail, name='team_detail')
+    path('team/<slug:slug>/', views.team_detail, name='team_detail'),
+    path("enquery/", views.enquery, name="enquery"),
 ]

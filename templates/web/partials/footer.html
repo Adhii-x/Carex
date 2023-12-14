@@ -25,14 +25,14 @@
                             <h4>Book For A Service</h4>
                         </div>
                         <div class="booking-inner clearfix">
-                            <form action="" class="form1 clearfix ajax reload" method="POST">
+                            <form action="{% url 'web:enquery' %}" class="form1 clearfix ajax reload" method="POST">
                                 {% csrf_token %}
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="input1_wrapper">
                                             <label>Your Name</label>
                                             <div class="input2_inner">
-                                                {{booking.name}}
+                                                {{bookingform.name}}
                                             </div>
                                         </div>
                                     </div>
@@ -40,7 +40,7 @@
                                         <div class="input1_wrapper">
                                             <label>Your Phone</label>
                                             <div class="input2_inner">
-                                                {{booking.phone}}
+                                                {{bookingform.phone}}
                                             </div>
                                         </div>
                                     </div>
@@ -48,7 +48,7 @@
                                         <div class="input1_wrapper">
                                             <label>Service Date</label>
                                             <div class="input1_inner">
-                                                {{booking.service_date}}
+                                                {{bookingform.service_date}}
                                             </div>
                                         </div>
                                     </div>
@@ -56,7 +56,7 @@
                                         <div class="select1_wrapper">
                                             <label>Service Time</label>
                                             <div class="select1_inner">
-                                                {{booking.service_time}}
+                                                {{bookingform.service_time}}
                                             </div>
                                         </div>
                                     </div>
@@ -64,7 +64,7 @@
                                         <div class="select1_wrapper">
                                             <label>Select A Service</label>
                                             <div class="select1_inner">
-                                                {{booking.services}}
+                                                {{bookingform.services}}
                                             </div>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@
                                         <div class="select1_wrapper">
                                             <label>Service Master</label>
                                             <div class="select1_inner">
-                                                {{booking.service_master}}
+                                                {{bookingform.service_master}}
                                             </div>
                                         </div>
                                     </div>

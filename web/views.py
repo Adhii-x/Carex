@@ -2,7 +2,7 @@ from django.http import HttpResponse
 import json
 from django.shortcuts import render,get_object_or_404,redirect
 from .models import About,Service,Work,Testimonial,Team,Blog
-from .forms import Booking,ContactForm
+from .forms import Booking, BookingForm,ContactForm
 
 
 # Create your views here.
@@ -23,7 +23,28 @@ def index(request):
         "testimonials": testimonials,
         "team_members": team_members,
         "blogs": blogs,
+        
     }
+    if request.method == "POST":
+        form = Booking(request.POST)
+        if form.is_valid():
+            form.save()
+            response_data = {
+                "status": "true",
+                "title": "Successfully Submitted",
+                "message": "Message successfully updated",
+            }
+        else:
+            print(form.errors)
+            response_data = {
+                "status": "false",
+                "title": "Form validation error",
+            }
+        return HttpResponse(
+            json.dumps(response_data), content_type="application/json"
+        )
+    else:
+        form = Booking()
     return render(request, "web/index.html", context)
 
 
@@ -111,5 +132,28 @@ def contact(request):
         )
     else:
         form = ContactForm()
-    context = {"contact": form}
+        
+    context = {"form": form}
     return render(request, "web/contact.html", context)
+
+
+def enquery(request):
+    if request.method == "POST":
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            response_data = {
+                "status": "true",
+                "title": "Successfully Submitted",
+                "message": "Message successfully updated",
+            }
+        else:
+            print(form.errors)
+            response_data = {
+                "status": "false",
+                "title": "Form validation error",
+            }
+        return HttpResponse(
+            json.dumps(response_data), content_type="application/json"
+        )
+    

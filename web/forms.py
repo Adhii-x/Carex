@@ -4,7 +4,7 @@ from .models import Booking,Contact
 from django.forms import widgets
 
 
-class Booking(forms.ModelForm):
+class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         exclude = ("timestamp",)
