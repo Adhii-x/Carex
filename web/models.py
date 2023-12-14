@@ -43,6 +43,7 @@ class Work(models.Model):
         return str(self.title)
     
 class Testimonial(models.Model):
+    testimonial_title = models.CharField(max_length=120,blank=True,null=True)
     testimonial_image = models.ImageField(upload_to="testimonial_image/")
     testimonial_name = models.CharField(max_length=120,blank=True,null=True)
     position = models.CharField(max_length=120,blank=True,null=True)
@@ -67,7 +68,6 @@ class Team(models.Model):
     awards_content = models.TextField(blank=True,null=True)
     biography_content = models.TextField(blank=True,null=True)
     facebook_link = models.URLField(blank=True,null=True)
-    youtube_link = models.URLField(blank=True,null=True)
     instagram_link = models.URLField(blank=True,null=True)
 
     class Meta:

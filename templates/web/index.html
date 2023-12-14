@@ -194,15 +194,15 @@
                                 {% for testimonial in testimonials %}
                                 <div class="item-box">
                                     <span class="quote"><i class="fa fa-quote-left"></i></span>
-                                    <h5>{{testimonial.testimonial_name}}</h5>
+                                    <h5>{{testimonial.testimonial_title}}</h5>
                                     <p>{{testimonial.testimonial_content}}</p>
                                     <div class="info">
                                         <div class="author-img">
                                             <img src="{{testimonial.testimonial_image.url}}" alt="">
                                         </div>
                                         <div class="cont">
-                                            <h6>{{testimonial.position}}</h6>
-                                            <span>Customer</span>
+                                            <h6>{{testimonial.testimonial_name}}</h6>
+                                            <span>{{testimonial.position}}</span>
                                         </div>
                                     </div>
                                 </div>

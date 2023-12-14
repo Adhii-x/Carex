@@ -40,7 +40,6 @@
                             <div class="coll">
                                 <div class="social-icon">
                                     <a href="{{ team_members.facebook_link }}" class="social-link"><i class="fa fa-facebook"></i></a>
-                                    <a href="{{ team_members.youtube_link }}" class="social-link"><i class="fa fa-youtube"></i></a>
                                     <a href="{{ team_members.instagram_link }}" class="social-link"><i class="fa fa-instagram"></i></a>
                                 </div>
                             </div>                            
@@ -52,7 +51,7 @@
                 </div>
                 <div class="col-md-7">
                     <div class="con">
-                        <h6>{{team_members.member_about}}</h6>
+                        <h6>{{team_members.about_title}}</h6>
                         <p>{{team_members.about_content}}</p>
                         <!-- tab -->
                         <ul class="nav nav-tabs simpl-bord mt-60" id="myTab" role="tablist">
@@ -96,49 +95,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="owl-carousel owl-theme">
-                        <div class="item">
-                            <div class="team-img"><img src="{% static 'web/img/team/1.jpg' %}" alt="" class="w-100"></div>
-                            <div class="con">
-                                <h5 class="mb-0"><a href="team-single.html">Enrico Brown<br><span>General Manager</span></a></h5>
-                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="team-img"> <img src="{% static 'web/img/team/2.jpg' %}" alt="" class="w-100"> </div>
-                            <div class="con">
-                                <h5 class="mb-0"><a href="team-single.html">Olivia Smith<br><span>Engine Specialist</span></a></h5>
-                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="team-img"><img src="{% static 'web/img/team/4.jpg' %}" alt="" class="w-100"></div>
-                            <div class="con">
-                                <h5 class="mb-0"><a href="team-single.html"> Alberto Steve<br><span>Certified Mechanic</span></a></h5>
-                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="team-img"> <img src="{% static 'web/img/team/5.jpg' %}" alt="" class="w-100"> </div>
-                            <div class="con">
-                                <h5 class="mb-0"><a href="team-single.html">Wagner Brown<br><span>Certified Engine</span></a></h5>
-                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="team-img"> <img src="{% static 'web/img/team/6.jpg' %}" alt="" class="w-100"> </div>
-                            <div class="con">
-                                <h5 class="mb-0"><a href="team-single.html">Andrea Lion<br><span>Customer Support</span></a></h5>
-                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="team-img"> <img src="{% static 'web/img/team/3.jpg' %}" alt="" class="w-100"> </div>
-                            <div class="con">
-                                <h5 class="mb-0"><a href="team-single.html">Pedro Martin<br><span>Certified Technician</span></a></h5>
-                                <div class="arrow"> <a href="team-single.html"><span class="ti-arrow-top-right"></span></a> </div>
-                            </div>
-                        </div>
-                    </div>
+                            <div class="item">
+                                <div class="team-img"><img src="{{team_members.member_image.url}}" alt="" class="w-100"></div>
+                                <div class="con">
+                                    <h5 class="mb-0"><a href="{% url 'web:team_detail' team_members.slug %}">{{team_members.member_name}}<br><span>{{team_members.member_position}}</span></a></h5>
+                                    <div class="arrow"> <a href="{% url 'web:team_detail' team_members.slug %}"><span class="ti-arrow-top-right"></span></a> </div>
+                                </div>
+                    </div>                    
                 </div>
             </div>
         </div>
