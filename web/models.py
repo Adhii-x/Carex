@@ -10,6 +10,9 @@ class About(models.Model):
     about_image = models.ImageField(upload_to="work/",blank=True,null=True)
     about_content = HTMLField(blank=True, null=True)
 
+    class Meta:
+        verbose_name = ('About')
+        verbose_name_plural = ('Abouts')
 
     def __str__(self):
         return str(self.about_title)    
@@ -20,6 +23,10 @@ class Service(models.Model):
     service_image = models.ImageField(upload_to="services/",blank=True,null=True)
     service_content = HTMLField(blank=True, null=True)
 
+    class Meta:
+        verbose_name = ('Service')
+        verbose_name_plural = ('Services')
+
     def __str__(self):
         return str(self.service_name)
     
@@ -27,6 +34,10 @@ class Work(models.Model):
     title = models.CharField(max_length=200,blank=True,null=True,verbose_name='Title name')
     work_content = models.TextField()
     order_num = models.CharField(max_length=200,blank=True,null=True)
+
+    class Meta:
+        verbose_name = ('Work')
+        verbose_name_plural = ('Works')
 
     def __str__(self):
         return str(self.title)
@@ -36,6 +47,10 @@ class Testimonial(models.Model):
     testimonial_name = models.CharField(max_length=120,blank=True,null=True)
     position = models.CharField(max_length=120,blank=True,null=True)
     testimonial_content  = models.TextField()
+
+    class Meta:
+        verbose_name = ('Testimonial')
+        verbose_name_plural = ('Testimonials')
 
     def __str__(self):
         return str(self.testimonial_name)
@@ -54,6 +69,10 @@ class Team(models.Model):
     facebook_link = models.URLField(blank=True,null=True)
     youtube_link = models.URLField(blank=True,null=True)
     instagram_link = models.URLField(blank=True,null=True)
+
+    class Meta:
+        verbose_name = ('Team')
+        verbose_name_plural = ('Teams')
      
     def __str__(self):
         return str(self.member_name)
@@ -69,6 +88,10 @@ class Blog(models.Model):
     image = models.ImageField(upload_to="blog/")
     second_image = models.ImageField(upload_to="blog/")
     content = HTMLField(blank=True, null=True)
+
+    class Meta:
+        verbose_name = ('Blog')
+        verbose_name_plural = ('Blogs')
 
     def __str__(self):
         return str(self.title)
@@ -103,6 +126,10 @@ class Booking(models.Model):
     services = models.CharField(max_length=50, choices=SERVICES_CHOICES, blank=True, null=True)
     service_master = models.CharField(max_length=120, choices=SERVICES_MASTER, blank=True, null=True)
 
+    class Meta:
+        verbose_name = ('Booking')
+        verbose_name_plural = ('Bookings')
+
     def __str__(self):
         return str(self.name)
     
@@ -112,6 +139,10 @@ class Contact(models.Model):
     phone = models.CharField(max_length=120,blank=True,null=True)
     subject = models.CharField(max_length=120,blank=True,null=True)
     message = models.TextField()
+
+    class Meta:
+        verbose_name = ('Contact')
+        verbose_name_plural = ('Contacts')
 
     def __str__(self):
         return str(self.name)
