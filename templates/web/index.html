@@ -272,23 +272,25 @@
         <div class="full-width">
             <div class="row">
                 <div class="col-md-12">
-                <div class="owl-carousel owl-theme">
-                   {% for blog in blogs %}
-                    <div class="item">
-                        <div class="wrap">
-                            <div class="wrapper-img"> <img src="{{blog.image.url}}" class="img-fluid rounded-1"> </div>
-                            <div class="wrapper-title">
-                                <h6>{{blog.sub_title}}</h6>
-                                <h4>{{blog.title}}</h4> 
-                                <a class="icon ti-arrow-right" href="{% url 'web:blog_detail' blog.slug %}"></a>
+                    <div class="owl-carousel owl-theme">
+                        {% for blog in blogs %}
+                        <div class="item">
+                            <div class="wrap">
+                                <div class="wrapper-img">
+                                    <img src="{{blog.image.url}}" class="img-fluid rounded-1">
+                                </div>
+                                <div class="wrapper-title">
+                                    <h6>{{blog.sub_title}}</h6>
+                                    <h4>{{blog.title}}</h4>
+                                    <a class="icon ti-arrow-right" href="{% url 'web:blog_detail' blog.slug %}"></a>
+                                </div>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
-                {% endfor %}
-                </div>
             </div>
-        </div>
+        </div>        
     </section>
     <!-- Appointment -->
 
