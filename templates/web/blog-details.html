@@ -54,7 +54,7 @@
                             <div class="user"> <img src="{{blogs.user_image.url}}" alt=""> </div>
                             <div class="cont">
                                 <h6>{{blogs.user}} &nbsp;&nbsp;<span>{{blogs.date}}</span></h6>
-                                <p>{{blogs.content}}</p>
+                                <p>{{blogs.content|truncatechars:199|safe}}</p>
                             </div>
                         </div>
                     </div>
